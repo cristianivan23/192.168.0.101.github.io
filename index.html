@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estación meteorológica</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Selección de los elementos de la sección
+            const tempElement = document.querySelector(".price-1:nth-child(1) h3");
+            const humidityElement = document.querySelector(".price-1:nth-child(2) h3");
+            const waterTempElement = document.querySelector(".price-1:nth-child(3) h3");
+            const timeElement = document.querySelector(".price-1:nth-child(4) h3");
+
+            // Variables iniciales
+            let temperature = 22.50;
+            let humidity = 43.10;
+            let waterTemperature = 20.00;
+            let timeElapsed = 0;
+
+            // Función para actualizar la temperatura
+            const updateTemperature = () => {
+                const change = (Math.random() * 0.2) * (Math.random() < 0.2 ? -5 : 5);
+                temperature = Math.min(29, Math.max(22, temperature + change));
+                tempElement.textContent = `${temperature.toFixed(2)}°`;
+            };
+
+            // Función para actualizar la humedad
+            const updateHumidity = () => {
+                const change = (Math.random() * 0.1) * (Math.random() < 0.1 ? -5 : 5);
+                humidity = Math.min(67, Math.max(42, humidity + change));
+                humidityElement.textContent = `${humidity.toFixed(2)}%`;
+            };
+
+            // Función para actualizar la temperatura acuática
+            const updateWaterTemperature = () => {
+                const change = (Math.random() * 0.5) * (Math.random() < 0.5 ? -1 : 1);
+                waterTemperature = Math.min(27, Math.max(17, waterTemperature + change));
+                waterTempElement.textContent = `${waterTemperature.toFixed(2)}°`;
+            };
+
+            // Función para actualizar el tiempo
+            const updateTime = () => {
+                timeElapsed += 1;
+                timeElement.textContent = `${timeElapsed}s`;
+            };
+
+            // Intervalos para las actualizaciones
+            setInterval(updateTemperature, 6000); // Cada 8 segundos
+            setInterval(updateHumidity, 3000);    // Cada 4 segundos
+            setInterval(updateWaterTemperature, 4000); // Cada 4 segundos
+            setInterval(updateTime, 1000);        // Cada 1 segundo
+        });
+    </script>
+
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+
+            <a href="proceso.html" class="logo">Proceso de construcción</a>
+            
+            <input type="checkbox" id="menu"/>
+            <label for="menu">
+                <img src="menu.png" class="menu-icono" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                   <li><a href="#">Ing. sistemas computacionales</a></li>
+                   
+
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-content container">
+            <div class="header-txt">
+             
+                <h1>Estación meteorológica</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="price container">
+        <div class="price-1">
+            <p>Temperatura</p>
+            <h3>23.35°</h3>
+        </div>
+
+        <div class="price-1">
+            <p>Humedad</p>
+            <h3>42.20%</h3>
+        </div>
+
+        <div class="price-1">
+            <p>Temperatura acuatica</p>
+            <h3>19.50°</h3>
+        </div>
+
+        <div class="price-1">
+            <p>Tiempo</p>
+            <h3>49s</h3>
+        </div>
+    </section>
+
+    <section class="adventur container">
+
+        <span>caracteristicas</span>
+        <h2>Estación meteorológica</h2>
+
+        <div class="adventur-content">
+
+            <div class="adventur-1 bg-1">
+                <img src="m1.png" alt="">
+                <h3>Magnitud física que expresa el grado de frío o calor del ambiente.</h3>
+                <a href="#" class="btn-1">Temperatura</a>
+            </div>
+
+            <div class="adventur-1 bg-2">
+                <img src="m2.png" alt="">
+                <h3>La humedad es la cantidad de vapor de agua que hay en el aire.<br></br></h3>
+                <a href="#" class="btn-1">Humedad</a>
+            </div>
+
+            <div class="adventur-1 bg-3">
+                <img src="m3.png" alt="">
+                <h3>El viento es el flujo del aire a gran escala en la atmósfera.<br></br></h3>
+                <a href="#" class="btn-1">Viento</a>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="general container">
+        
+        <div class="general-txt">
+            <span>Materiales</span>
+            <p>Arduino mega 2560, Arduino UNO, Protoboard, Pantallas lcd-IC2, Sensor de temperatura DHT11, Sensor de temperatura DS18B20, cables dupont.</p>
+            <span>Información</span>
+            <p>Este proyecto esta orientado a una estación meteorológica tipo A. Mide temperatura atmosferica, humedad relativa y temperatura acuatica</p>
+        </div>
+
+        <div class="general-img">
+            <img src="right.png" alt="">
+        </div>
+
+    </section>
+
+    <section class="banner">
+
+        
+        <span>Contactanos</span><br>
+        <span>55-30-71-95-85</span>
+        
+
+    </section>
+
+    <main class="plan container">
+        <span>Es un proyecto que permite medir y registrar variables climáticas utilizando sensores conectados a una placa Arduino. Este tipo de estación puede incluir sensores de temperatura, humedad y presión atmosférica. Los datos recolectados se pueden visualizar en timepo real a través de una pantalla LCD, o bien, se pueden enviar a una página web para su análisis y almacenamiento.</span>
+        
+
+        
+    </main>
+
+    <footer class="footer">
+        <center> <span>©2024 Derechos reservados Estación meterorológica</span> </center>
+
+        <div class="footer-content container">
+            
+            
+
+        </div>
+    </footer>
+</body>
+</html>
